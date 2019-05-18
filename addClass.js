@@ -6,7 +6,7 @@ module.exports = file => {
 
 	const addExt = file => {
 		const ext = file.slice(file.lastIndexOf('.') + 1, file.length)
-		const special = /(package.json|yarn.lock)/
+		const special = /(package.json|yarn.lock|Pipfile(\.lock)?)/
 		special.test(file) ? (
 			className += file
 				.slice(file.lastIndexOf('/') + 1, file.length)

@@ -24,7 +24,8 @@ body {
 
 h1 {
 	font-size: 3vw;
-	padding-top: 1em
+	padding-top: 1em;
+	margin-bottom: 0
 }
 
 body div {
@@ -68,6 +69,11 @@ pre {
 	color: white
 }
 
+.html, .rb {
+	background: red;
+	color: white
+}
+
 .gitignore {
 	background: #f74e27;
 	color: white
@@ -75,5 +81,10 @@ pre {
 
 .dir {
 	border: 1px solid black
+}
+
+.py, .python-version, .Pipfile, .Pipfile_lock {
+	background: #264d6f;
+	color: white
 }
 `
