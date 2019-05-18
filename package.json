@@ -1,0 +1,16 @@
+{
+  "name": "f-serv",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  },
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "dependencies": {
+    "koa": "^2.7.0",
+    "marked": "^0.6.2"
+  }
+}
