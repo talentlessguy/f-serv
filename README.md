@@ -1,6 +1,6 @@
 # f-serv
 
-Small project files explorer built with Koa and Marked.
+Small project files explorer working on a server.
 
 ## Usage
 
