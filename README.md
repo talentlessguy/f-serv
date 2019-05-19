@@ -1,4 +1,6 @@
-# f-serv
+![preview](https://thumbs.gfycat.com/CarelessSoftBufflehead-size_restricted.gif)
+
+# f-serv 🗂️
 
 ![David](https://img.shields.io/david/talentlessguy/f-serv.svg?style=flat-square)
 
