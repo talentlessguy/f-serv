@@ -2,6 +2,8 @@ const Koa = require('koa')
 const { existsSync } = require('fs')
 const { readdir, readFile, lstat } = require('fs').promises
 const marked = require('marked')
+const { cyan, bold, blue } = require('chalk')
+const open = require('open')
 const { chdir, cwd } = process
 
 const globalStyles = require('./globalStyles')
@@ -12,8 +14,10 @@ const app = new Koa()
 
 module.exports = (port, startDir) => {
 	app.use(async ctx => {
+		// To use non-english characters
+		ctx.url = decodeURI(ctx.url)
 		if (ctx.url === '/') {
-			process.chdir(startDir || './')
+			chdir(startDir || './')
 			const dir = await readdir('./')
 			ctx.body = `
 			<style>
@@ -66,5 +70,16 @@ module.exports = (port, startDir) => {
 		}</body>`
 		}
 	})
-	app.listen(port || 80)
+	const chosenPort = port || 80
+	app.listen(chosenPort, async () => {
+		console.log(
+			cyan('\nf-serv is starting from:'),
+			blue(`\n\n${startDir || __dirname}`),
+			cyan(`\n\nApp is served on`),
+			bold(`http://localhost:${chosenPort}`),
+			cyan('\n\nQuit f-serv: Ctrl + C')
+		)
+		await open(`http://localhost:${chosenPort}`)
+	}
+	)
 }
