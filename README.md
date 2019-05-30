@@ -4,7 +4,7 @@
 
 ![David](https://img.shields.io/david/talentlessguy/f-serv.svg?style=flat-square)
 
-Small files explorer working on a server.
+Small file explorer working on a server.
 
 ## Usage
 
