@@ -1,6 +1,6 @@
-const { lstatSync } = require('fs')
+import { lstatSync } from 'fs'
 
-module.exports = file => {
+export default file => {
 	const stats = lstatSync(file)
 	let className = ''
 

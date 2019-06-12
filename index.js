@@ -1,23 +1,25 @@
-const Koa = require('koa')
-const { existsSync } = require('fs')
-const { readdir, readFile, lstat } = require('fs').promises
-const marked = require('marked')
-const { cyan, bold, blue } = require('chalk')
-const open = require('open')
+import Koa from 'koa'
+import { promises, existsSync } from 'fs'
+import marked from 'marked'
+import { cyan, bold, blue } from 'chalk'
+import open from 'open'
+
 const { chdir, cwd } = process
+const { readdir, readFile, lstat } = promises
 
-const globalStyles = require('./globalStyles')
-const addClass = require('./addClass')
-const cleanHtml = require('./cleanHtml')
+import globalStyles from './globalStyles'
+import addClass from './addClass'
+import cleanHtml from './cleanHtml'
 
-const app = new Koa()
+const fServ = (port = 80, startDir = './') => {
 
-module.exports = (port, startDir) => {
+  const app = new Koa()
+
 	app.use(async ctx => {
 		// To use non-english characters
 		ctx.url = decodeURI(ctx.url)
 		if (ctx.url === '/') {
-			chdir(startDir || './')
+			chdir(startDir)
 			const dir = await readdir('./')
 			ctx.body = `
 			<style>
@@ -70,16 +72,19 @@ module.exports = (port, startDir) => {
 		}</body>`
 		}
 	})
-	const chosenPort = port || 80
-	app.listen(chosenPort, async () => {
+	app.listen(port, async () => {
 		console.log(
 			cyan('\nf-serv is starting from:'),
 			blue(`\n\n${startDir || __dirname}`),
 			cyan(`\n\nApp is served on`),
-			bold(`http://localhost:${chosenPort}`),
+			bold(`http://localhost:${port}`),
 			cyan('\n\nQuit f-serv: Ctrl + C')
 		)
-		await open(`http://localhost:${chosenPort}`)
+		await open(`http://localhost:${port}`)
 	}
 	)
 }
+
+module.exports = fServ
+
+!module.parent ? fServ(process.argv[2], process.argv[3]) : null

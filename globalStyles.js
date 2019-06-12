@@ -1,4 +1,4 @@
-module.exports = () => `
+export default () => `
 button {
 	height: 2em;
 	border: none;
