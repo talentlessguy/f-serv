@@ -2,7 +2,10 @@
 
 # f-serv 📁
 
+![Twitter](https://img.shields.io/twitter/follow/v1rtl.svg?label=twitter&style=flat-square)
 ![David](https://img.shields.io/david/talentlessguy/f-serv.svg?style=flat-square)
+![Top lang](https://img.shields.io/github/languages/top/talentlessguy/f-serv.svg?style=flat-square)
+![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/f-serv.svg?style=flat-square)
 
 File explorer working on a server with markdown rendering and colorized file names.
 
