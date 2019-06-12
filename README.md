@@ -43,7 +43,8 @@ First option specifies the port the app will use so after launch you can find th
 ## TODO
 
 - [x] Added URL decode for non-English characters
-- [ ] Add CLI interface
+- [x] Add CLI interface
+- [ ] Replace Koa with `http` module
 - [ ] Add more colors for file formats
 - [ ] Add handling for permission errors
 - [ ] Add editing files
