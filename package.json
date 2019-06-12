@@ -1,6 +1,7 @@
 {
   "name": "f-serv",
   "description": "File explorer working on a server",
+  "bin": "bin/f-serv",
   "repository": {
     "type": "git",
     "url": "https://github.com/talentlessguy/f-serv.git"
