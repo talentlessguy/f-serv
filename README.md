@@ -6,7 +6,23 @@
 
 File explorer working on a server with markdown rendering and colorized file names.
 
+## Installation
+
+```sh
+npm i -g f-serv
+# or
+yarn global add f-serv
+```
+
 ## Usage
+
+As CLI:
+
+```sh
+f-serv 80 ../
+```
+
+As module:
 
 ```js
 const fServ = require('f-serv')

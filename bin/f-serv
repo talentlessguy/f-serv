@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 
 const fServ = require('../lib/f-serv')
 fServ(process.argv[2], process.argv[3])
