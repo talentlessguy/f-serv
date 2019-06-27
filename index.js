@@ -1,4 +1,4 @@
-import Koa from 'koa'
+import { createServer } from 'http'
 import { promises, existsSync } from 'fs'
 import marked from 'marked'
 import { cyan, bold, blue } from 'chalk'
@@ -10,25 +10,22 @@ const { readdir, readFile, lstat } = promises
 import globalStyles from './globalStyles'
 import addClass from './addClass'
 import cleanHtml from './cleanHtml'
+import template from './template'
 
-const fServ = (port = 80, startDir = './') => {
+const fServ = (port = 80, startDir = './', openServer = false) => {
+  createServer(async (req, res) => {
 
-  const app = new Koa()
-
-	app.use(async ctx => {
-		// To use non-english characters
-		ctx.url = decodeURI(ctx.url)
-		if (ctx.url === '/') {
-			chdir(startDir)
+    // Transform URL
+    req.url = decodeURI(req.url)
+    if (req.url === '/') {
+      chdir(startDir)
 			const dir = await readdir('./')
-			ctx.body = `
+			res.end(template(`
 			<style>
 			${globalStyles()}
 			</style>
 			<body style="height: 100vh" >
-			<h1>🗂️ ${cwd()
-					.toString()
-					.slice(cwd().lastIndexOf('/') + 1, cwd().length)
+			<h1>📁 ${cwd().toString().slice(cwd().lastIndexOf('/') + 1, cwd().length)
 				}
 			</h1>
 			<h4>${cwd()}</h4>
@@ -43,22 +40,22 @@ const fServ = (port = 80, startDir = './') => {
 					</button>
 					`
 				}
-			).join('')}</div></body>`
-		} else {
-			let name = ctx.url
-			name = ctx.url.slice(1, name.length)
-			const stats = await lstat(name)
+			).join('')}</div></body>`))
+    }
+    else if (req.url === '/favicon.ico') res.end('')
+    else {
+      let name = req.url.slice(1, req.url.length)
+      const stats = await lstat(name)
 			const isFile = !stats.isDirectory() && existsSync(name)
 			const file = isFile ? await readFile(name) : await readdir(name)
-			ctx.type = 'html'
-			const content = cleanHtml(file.toString())
-			ctx.body = `<style>
+      const content = cleanHtml(file.toString())
+			res.end(template(`<style>
 			${globalStyles()}
 			</style>
 			<body>
 			<h1>${isFile ? '📜' : '📁'} ${name.slice(name.lastIndexOf('/') + 1, name.length)}</h1>
 			<a onClick="history.back()">back</a>
-			<a href="/">home</a>
+      <a href="/">home</a>
 		${
 			isFile ? (
 				name.includes('.md') ? `<main>${marked(content)}</main>` : `<pre>${content}</pre>`
@@ -69,10 +66,9 @@ const fServ = (port = 80, startDir = './') => {
 							${el}</button>`
 					)).join('') + '</div>'
 				)
-		}</body>`
-		}
-	})
-	app.listen(port, async () => {
+		}</body>`))
+    }
+  }).listen(port, async () => {
 		console.log(
 			cyan('\nf-serv is starting from:'),
 			blue(`\n\n${startDir || __dirname}`),
@@ -80,9 +76,8 @@ const fServ = (port = 80, startDir = './') => {
 			bold(`http://localhost:${port}`),
 			cyan('\n\nQuit f-serv: Ctrl + C')
 		)
-		await open(`http://localhost:${port}`)
-	}
-	)
+		openServer && await open(`http://localhost:${port}`)
+  })
 }
 
 module.exports = fServ

@@ -2,7 +2,7 @@
 
 # f-serv 📁
 
-![David](https://img.shields.io/david/talentlessguy/f-serv.svg?style=flat-square)
+![David](https://img.shields.io/david/talentlessguy/f-serv.svg?style=flat-square) ![npm](https://img.shields.io/npm/v/f-serv.svg?style=flat-square) ![node](https://img.shields.io/node/v/f-serv.svg?style=flat-square) ![npm type definitions](https://img.shields.io/npm/types/f-serv.svg?style=flat-square)
 
 File explorer working on a server with markdown rendering and colorized file names.
 
@@ -22,6 +22,8 @@ As CLI:
 f-serv 80 ../
 ```
 
+if you add `-o` or `--open` flag in CLI it will open a new tab in a browser.
+
 As module:
 
 ```js
@@ -32,8 +34,8 @@ fServ(3000, './')
 
 ### Options
 
-```js
-fServ(port:number, startDir:string)
+```ts
+fServ(port:number, startDir:string, open: boolean)
 ```
 
 First option specifies the port the app will use so after launch you can find the app on `localhost:/<PORT>`

@@ -1,5 +1,4 @@
 import { terser } from 'rollup-plugin-terser'
-import { dependencies } from './package.json'
 
 const dev = process.env.ROLLUP_WATCH === 'true'
 
@@ -10,5 +9,5 @@ export default {
     format: 'cjs'
   },
   plugins: [!dev && terser()],
-  external: ['koa', 'fs', 'marked', 'chalk', 'open']
+  external: ['http', 'fs', 'marked', 'chalk', 'open']
 }

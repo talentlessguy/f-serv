@@ -52,7 +52,8 @@ pre, code {
 
 pre {
 	padding: 0.5em;
-	background: whitesmoke
+  background: whitesmoke;
+  width: 
 }
 
 .js {
