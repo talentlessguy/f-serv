@@ -2,7 +2,13 @@
 
 # f-serv 📁
 
-![David](https://img.shields.io/david/talentlessguy/f-serv.svg?style=flat-square) ![npm](https://img.shields.io/npm/v/f-serv.svg?style=flat-square) ![node](https://img.shields.io/node/v/f-serv.svg?style=flat-square) ![npm type definitions](https://img.shields.io/npm/types/f-serv.svg?style=flat-square)
+![Twitter](https://img.shields.io/twitter/follow/v1rtl.svg?label=my%20twitter&style=flat-square)
+![David](https://img.shields.io/david/talentlessguy/f-serv.svg?style=flat-square)
+![Top lang](https://img.shields.io/github/languages/top/talentlessguy/f-serv.svg?style=flat-square)
+![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/f-serv.svg?style=flat-square)
+![npm](https://img.shields.io/npm/v/f-serv.svg?style=flat-square)
+![npm type definitions](https://img.shields.io/npm/types/f-serv.svg?style=flat-square)
+![npm](https://img.shields.io/npm/dt/f-serv.svg?style=flat-square)
 
 File explorer working on a server with markdown rendering and colorized file names.
 
@@ -19,7 +25,7 @@ yarn global add f-serv
 As CLI:
 
 ```sh
-f-serv 80 ../
+f-serv 80
 ```
 
 if you add `-o` or `--open` flag in CLI it will open a new tab in a browser.
@@ -46,8 +52,8 @@ First option specifies the port the app will use so after launch you can find th
 
 - [x] Added URL decode for non-English characters
 - [x] Add CLI interface
-- [ ] Replace Koa with `http` module
+- [x] Replace Koa with `http` module
 - [ ] Add more colors for file formats
-- [ ] Add handling for permission errors
+- [x] Add handling for permission errors
 - [ ] Add editing files
 - [ ] Add different layout modes
