@@ -1,18 +1,19 @@
 {
   "name": "f-serv",
   "description": "File explorer working on a server",
+  "types": "types.d.ts",
   "bin": "bin/f-serv",
   "repository": {
     "type": "git",
     "url": "https://github.com/talentlessguy/f-serv.git"
   },
   "author": "talentlessguy <pilll.PL22@gmail.com>",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "index.js",
   "license": "MIT",
   "engines": {
     "node": ">=8",
-    "yarn": ">=1.15"
+    "yarn": ">=1.10"
   },
   "keywords": [
     "server",
@@ -29,11 +30,11 @@
   "scripts": {
     "dev": "rollup -cw",
     "build": "rollup -c",
-    "prepublish": "yarn build"
+    "prepublish": "yarn build",
+    "server": "nodemon bin/f-serv -w lib/f-serv.js"
   },
   "dependencies": {
     "chalk": "^2.4.2",
-    "koa": "^2.7.0",
     "marked": "^0.6.2",
     "open": "^6.3.0"
   }
