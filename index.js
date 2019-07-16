@@ -1,7 +1,7 @@
 import { createServer } from 'http'
 import { promises, existsSync } from 'fs'
 import marked from 'marked'
-import { cyan, bold, blue } from 'chalk'
+import { cyan, bold, blue } from './colors'
 import open from 'open'
 
 const { chdir, cwd } = process
