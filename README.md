@@ -9,6 +9,7 @@
 ![npm](https://img.shields.io/npm/v/f-serv.svg?style=flat-square)
 ![npm type definitions](https://img.shields.io/npm/types/f-serv.svg?style=flat-square)
 ![npm](https://img.shields.io/npm/dt/f-serv.svg?style=flat-square)
+![Codacy grade](https://img.shields.io/codacy/grade/78b172f2f4d947168e6ccf30de895448.svg?style=flat-square)
 
 File explorer working on a server with markdown rendering and colorized file names.
 
