@@ -9,6 +9,7 @@
 ![npm](https://img.shields.io/npm/v/f-serv.svg?style=flat-square)
 ![npm type definitions](https://img.shields.io/npm/types/f-serv.svg?style=flat-square)
 ![npm](https://img.shields.io/npm/dt/f-serv.svg?style=flat-square)
+![Codacy grade](https://img.shields.io/codacy/grade/78b172f2f4d947168e6ccf30de895448.svg?style=flat-square)
 
 File explorer working on a server with markdown rendering and colorized file names.
 
@@ -22,15 +23,15 @@ yarn global add f-serv
 
 ## Usage
 
-As CLI:
+### CLI
 
 ```sh
-f-serv 80
+f-serv 80 ./ -o
 ```
 
-if you add `-o` or `--open` flag in CLI it will open a new tab in a browser.
+If you add `-o` or `--open` flag in CLI it will open a new tab in a browser.
 
-As module:
+### As module
 
 ```js
 const fServ = require('f-serv')
@@ -38,7 +39,7 @@ const fServ = require('f-serv')
 fServ(3000, './')
 ```
 
-### Options
+#### Options
 
 ```ts
 fServ(port:number, startDir:string, open: boolean)
@@ -53,7 +54,10 @@ First option specifies the port the app will use so after launch you can find th
 - [x] Added URL decode for non-English characters
 - [x] Add CLI interface
 - [x] Replace Koa with `http` module
-- [ ] Add more colors for file formats
+- [ ] Add more colors for file formats (0 / 30)
 - [x] Add handling for permission errors
 - [ ] Add editing files
 - [ ] Add different layout modes
+- [x] Get rid of `chalk`
+- [x] Get rid of `open`
+- [ ] Fix responsive mode for narrow screens
