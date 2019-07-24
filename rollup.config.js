@@ -9,5 +9,5 @@ export default {
     format: 'cjs'
   },
   plugins: [!dev && terser()],
-  external: ['http', 'fs', 'marked', 'chalk', 'open']
+  external: ['http', 'fs', 'marked', 'open']
 }

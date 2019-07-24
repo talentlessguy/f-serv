@@ -2,11 +2,11 @@
 
 # f-serv 📁
 
-![Twitter](https://img.shields.io/twitter/follow/v1rtl.svg?label=my%20twitter&style=flat-square)
+[![Twitter](https://img.shields.io/twitter/follow/v1rtl.svg?label=my%20twitter&style=flat-square)](https://twitter.com/v1rtl)
 ![David](https://img.shields.io/david/talentlessguy/f-serv.svg?style=flat-square)
 ![Top lang](https://img.shields.io/github/languages/top/talentlessguy/f-serv.svg?style=flat-square)
 ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/f-serv.svg?style=flat-square)
-![npm](https://img.shields.io/npm/v/f-serv.svg?style=flat-square)
+[![npm](https://img.shields.io/npm/v/f-serv.svg?style=flat-square)](https://npm.im/f-serv)
 ![npm type definitions](https://img.shields.io/npm/types/f-serv.svg?style=flat-square)
 ![npm](https://img.shields.io/npm/dt/f-serv.svg?style=flat-square)
 ![Codacy grade](https://img.shields.io/codacy/grade/78b172f2f4d947168e6ccf30de895448.svg?style=flat-square)
@@ -57,7 +57,8 @@ First option specifies the port the app will use so after launch you can find th
 - [ ] Add more colors for file formats (0 / 30)
 - [x] Add handling for permission errors
 - [ ] Add editing files
-- [ ] Add different layout modes
+- [x] Add different layout modes
 - [x] Get rid of `chalk`
 - [x] Get rid of `open`
-- [ ] Fix responsive mode for narrow screens
+- [x] Fix responsive mode for narrow screens
+- [ ] Setup tests with Jest
