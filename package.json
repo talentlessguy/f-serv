@@ -23,9 +23,9 @@
     "files"
   ],
   "devDependencies": {
-    "nodemon": "^1.19.1",
-    "rollup": "^1.17.0",
-    "rollup-plugin-terser": "^5.1.1"
+    "nodemon": "^2.0.6",
+    "rollup": "^2.34.2",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "scripts": {
     "dev": "rollup -cw",
@@ -34,7 +34,7 @@
     "server": "nodemon bin/f-serv -w lib/f-serv.js"
   },
   "dependencies": {
-    "marked": "^0.7.0",
-    "open": "^6.4.0"
+    "marked": "^1.2.5",
+    "open": "^7.3.0"
   }
 }
