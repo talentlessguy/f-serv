@@ -2,7 +2,6 @@
 
 # f-serv 📁
 
-[![Twitter](https://img.shields.io/twitter/follow/v1rtl.svg?label=my%20twitter&style=flat-square)](https://twitter.com/v1rtl)
 ![David](https://img.shields.io/david/talentlessguy/f-serv.svg?style=flat-square)
 ![Top lang](https://img.shields.io/github/languages/top/talentlessguy/f-serv.svg?style=flat-square)
 ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/f-serv.svg?style=flat-square)
@@ -11,7 +10,7 @@
 ![npm](https://img.shields.io/npm/dt/f-serv.svg?style=flat-square)
 ![Codacy grade](https://img.shields.io/codacy/grade/78b172f2f4d947168e6ccf30de895448.svg?style=flat-square)
 
-File explorer working on a server with markdown rendering and colorized file names.
+Cute static file server.
 
 ## Installation
 
@@ -26,7 +25,7 @@ yarn global add f-serv
 ### CLI
 
 ```sh
-f-serv 80 ./ -o
+f-serv 3000 ./ -o
 ```
 
 If you add `-o` or `--open` flag in CLI it will open a new tab in a browser.
